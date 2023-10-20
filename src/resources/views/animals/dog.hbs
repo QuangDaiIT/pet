@@ -1,0 +1,99 @@
+<div id="header">
+<!-- Begin nav -->
+  <div class="navar-logo-search">
+  <form name="seach-pet-form" method="GET" action="/pet/search">
+    <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+       <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+  </form>        
+  </div>
+  <ul id="nav">
+    <li><a href="/pet/dog">Cún Cảnh</a></li>
+    <li><a href="/pet/cat">Mèo Cảnh</a></li>
+    <li><a href="">Liên Hệ</a></li>
+    {{{Authentication _login}}}
+  </ul>
+  <a href="/pet/cart/show?cart=true" class="register-login-authetication">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <div class="number-of-items-cart">{{countCart}}</div>
+  </a>
+</div>
+</div>
+<div class="container-type-of-dog">
+    <div class="wrap-type-of-dog">
+        <img class="imge-presentation-content" src="https://azpet.com.vn/wp-content/uploads/2021/07/Banner-Mobile-Cho-Canh.jpg" alt="">
+        <div class="specialization-product-content1">
+            <h2 class="specialization-text-content">GIỐNG CÚN CẢNH</h2>
+        </div>
+        <div class="list-of-type-dogs">
+            <button class="type-of-dogs-btn active-type-of-dogs-btn">Phổ Biến Nhất</button>
+            <button class="type-of-dogs-btn">Độc Hiếm</button>
+            <button class="type-of-dogs-btn">Cún Bảo Vệ</button>
+            <button class="type-of-dogs-btn">Cún Mặt Xệ</button>
+            <button class="type-of-dogs-btn">Cún Ngao</button>
+            <button class="type-of-dogs-btn">Cún Bull</button>
+            <button class="type-of-dogs-btn">Cún Săn</button>
+            <button class="type-of-dogs-btn">Cún Kéo Xe</button>
+            <button class="type-of-dogs-btn">Cún Xóa</button>
+            {{!-- <div class="btn-slider-type-of-dogs">
+                <button class="type-of-dogs-btn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="type-of-dogs-btn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            </div> --}}
+        </div>
+        <div class="container-tag-animals">
+            {{#each courses}}
+                <div class="wrapper-tag-animals">
+                    <a class="link-to-more-infor-animals" href="/pet/{{this.slug}}">
+                        <div class="limited-image-animals-overflow">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                        </div>
+                        <h5 class="card-title-animals">{{this.name}}</h5>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{!-- <div class="col-sm-6 col-lg-4">
+                    <div class="card card-course-item">
+                        <div class="limited-image-animals-overflow">
+                            <a href="/courses/{{this.slug}}">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                            </a>
+                        </div>
+                        <h5 class="card-title">{{this.name}}</h5>
+                        {{!-- <div class="card-body">
+                            <a href="/courses/{{this.slug}}">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            </a>
+                            <p class="card-text">{{this.description}}</p>
+                            <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        </div> --}}
+                    {{!-- </div>
+                </div> --}}
+
+{{!-- <div class="mt-4 total-ui-pet-shop">
+            <div class="row">
+                {{#each courses}}
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card card-course-item">
+                        <a href="/courses/{{this.slug}}">
+                        <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <a href="/courses/{{this.slug}}">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            </a>
+                            <p class="card-text">{{this.description}}</p>
+                            <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div> --}}

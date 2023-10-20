@@ -1,0 +1,172 @@
+{{!-- <h1>HEADER</h1> --}}
+<div class="container-header-navbar">
+  <div class="logo-quick-contact">
+      <a class="navbar-brand" href="/">
+      <img src="https://www.freeiconspng.com/thumbs/dog-png/dog-png-30.png" alt="">
+      <span>LovePets</span>
+    </a>
+    <ul class="header-navbar-contact-highest">
+      <li class="header-navbar-contact-item">
+          <a href="" class="header-navbar-contact-link">
+            <i class="fa-solid fa-phone"></i>
+            (+84) 703 313 097
+          </a>
+      </li>
+      <li class="header-navbar-contact-item">
+          <a href="mailto:trinhdai5903@gmail.com" class="header-navbar-contact-link">
+            <i class="fa-regular fa-envelope"></i>
+            trinhdai5903@gmail.com</a>
+      </li>
+      <li class="header-navbar-contact-item">
+          <span class="header-navbar-contact-link contact-link-header-span">
+            <img src="https://callary.vn/wp-content/themes/callary_theme/images/flag-vn.png" alt="">
+             Việt Nam
+          </span>
+      </li>
+    </ul>
+  </div>
+</div>
+{{!-- <div id="header">
+<!-- Begin nav -->
+  <div class="navar-logo-search">
+  <form name="seach-pet-form" method="GET" action="/pet/search">
+    <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+       <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+  </form>        
+  </div>
+  <ul id="nav">
+    <li><a href="/pet/dog">Cún Cảnh</a></li>
+    <li><a href="/pet/cat">Mèo Cảnh</a></li>
+    <li><a href="">Liên Hệ</a></li>
+    {{{Authentication _login}}}
+  </ul>
+  <a href="/pet/cart/show?cart=true" class="register-login-authetication">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <div class="number-of-items-cart">0</div>
+  </a>
+</div>
+</div> --}}
+
+<script>
+    
+    //var linkToSearch = "?_search = " + getSearchText.value.toLowercase();
+    //getSearchText.onkeyup = function() {
+    //  getSearchText.value;
+    //}
+    //console.log(addToCart);
+
+    if(document.querySelector(".logout-of-user")){
+      var logOut = document.querySelector(".logout-of-user");
+      var formLogOut = document.querySelector(".form-log-out-submit");
+      logOut.onclick = function() {
+        formLogOut.action = "/";
+        formLogOut.submit();
+    }
+    }
+    
+
+    
+
+    
+    
+</script>
+
+<!--
+
+  false : `<li><a href="/account/register" class="register-btn">Đăng ký</a></li>
+                                <li><a href="/account/login" class="login-btn">Đăng nhập</a></li>`,
+                    true : `<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW2rxo-vtVgwLPgVqu0Jo-v2JYIDeh-M77Ag&usqp=CAU" alt="" class="user-avatar">
+                                Quang Đại
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/courses/create">Đăng khóa học</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a>
+                                        <a class="dropdown-item" href="/me/stored/news">Bài viết của tôi</a>
+                                        <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                                </div>
+                            </li>
+      <button class="register-button-enter" name="_login" type="submit" value="true" >
+                    Đăng Nhập
+                    {{! <a href="?_login&type=true" class="notify-login-successfull">ĐĂNG NHẬP</a> }}
+                </button>
+                <button class="dropdown-item logout-of-user" name="_login" type="submit" value="false" >
+-->
+  
+
+
+{{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark header-navbar-css">
+  <div class="container container-navbar-header">
+        <a class="navbar-brand" href="/">
+        <img src="https://www.freeiconspng.com/thumbs/dog-png/dog-png-30.png" alt="">
+        LovePets</a>
+          <input class="search-input-kewords" type="text" placeholder="Nhập từ khóa...">
+    <button class="btn-search-kewords">Tìm kiếm</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto"> --}}
+
+
+        <!-- /////// -->
+        {{!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li> --}}
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/courses/create">Đăng khóa học</a>
+        </li> --}}
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li> --}}
+         <!-- /////// -->
+
+
+
+
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW2rxo-vtVgwLPgVqu0Jo-v2JYIDeh-M77Ag&usqp=CAU" alt="" class="user-avatar">
+            Quang Đại
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/courses/create">Đăng khóa học</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a>
+            <a class="dropdown-item" href="/me/stored/news">Bài viết của tôi</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Đăng xuất</a>
+          </div>
+        </li>
+      </ul> --}}
+
+
+
+    {{!-- </div>
+  </div>
+</nav> --}}
+
+       <!-- /////// -->
+      {{!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> --}}
+       <!-- /////// -->
+      
+   

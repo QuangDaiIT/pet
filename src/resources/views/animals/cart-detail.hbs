@@ -1,0 +1,154 @@
+<div class="sub-header-for-page">
+<!-- Begin nav -->
+    {{!-- <div class="navar-logo-search">
+    <form name="seach-pet-form" method="GET" action="/pet/search">
+        <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>        
+    </div>
+    <ul id="nav">
+        <li><a href="/pet/dog">Cún Cảnh</a></li>
+        <li><a href="/pet/cat">Mèo Cảnh</a></li>
+        <li><a href="">Liên Hệ</a></li>
+        {{{Authentication _login}}}
+    </ul>
+    <a href="/pet/cart/show?cart=true" class="register-login-authetication">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="number-of-items-cart">0</div>
+    </a>
+
+    251103050903
+    </div> --}}
+    
+    <div class="title-name-of-dog">
+        <div class="title-of-name-page">
+            <i class="fa-solid fa-bag-shopping bag-in-the-cart-shopping"></i>
+            <span class="content-of-bag-goods">Giỏ Hàng</span>
+        </div>
+        <div class="navar-logo-search">
+            <form name="seach-pet-form" method="GET" action="/pet/search">
+                <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>        
+        </div>
+    </div>
+</div>
+
+<div class="wrap-cart-store">
+    <div class="card-container-store">
+        <div class="header-card-item-feature">
+            <div class="item-wrap-container-tag">
+                <div class="item-wrap-header-content">
+                <input type="checkbox" class="check-box-buy-item check-all-bill">
+                </div>
+                <div class="item-wrap-header-content item-wrap-header-content1">Thú Cưng</div>
+            </div>
+            <div class="item-wrap-container-tag">
+                <div class="item-wrap-header-content2">Đơn Giá</div>
+                <div class="item-wrap-header-content2">Số Lượng</div>
+                <div class="item-wrap-header-content2">Số Tiền</div>
+                <div class="item-wrap-header-content2">Thao Tác</div>
+            </div>
+        </div>
+        
+        {{#each pet}}
+        <div class="pet-item-added-to-cart">
+            <div class="wrap-checkbox-image-name-pet">
+                <div class="item-wrap-header-content-detail">
+                    <input type="checkbox" class="check-box-buy-item" name="petIds[]" value="{{this._id}}">
+                </div>
+                <div class="image-of-pet-added">
+                    <img class="image-of-pet-contain" src="{{this.image}}" alt="">
+                </div>
+                <h4 class="item-added-to-cart">{{this.name}}</h4>
+            </div>
+            <div class="item-wrap-container-tag">
+                <div class="item-wrap-header-content2">{{this.price}} VNĐ</div>
+                <div class="item-wrap-header-content2 wrap-adjust-btn-cart">
+                    <button class="button-ajust-quantity-good btn-decrease-quantity">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input class="input-increase-descrease-cart" type="text" value="1" name="cart">
+                    <button class="button-ajust-quantity-good btn-increase-quantity">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <div class="item-wrap-header-content2">{{this.price}} VNĐ</div>
+                <div class="item-wrap-header-content2">
+                    <form class="remove-from-cart-form" action="/pet/remove/{{this._id}}/cart?_method=PUT" method="POST">
+                    <button class="delete-good-from-cart" name="cart" type="submit" value="false">
+                    Xóa
+                    </button>
+                </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <div class="card-buy-bill-for-pet">
+            <div class="left-buy-for-all">
+                <input type="checkbox" class="tick-choose-all-item check-all-bill">
+                <div class="choose-all-for-goods">Chọn Tất Cả</div>
+                <button class="delete-all-btn-item">Xóa</button>
+            </div>
+            <div class="right-buy-for-all">
+                <div class="money-for-all-goods">Tổng Thanh Toán ( 0 pet ) : 0 vnđ</div>
+                <a  class="choose-all-for-goods-to-buy" href="/account/buy/page">Mua Hàng</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){    
+    var increaseBtn = document.querySelector(".btn-increase-quantity");
+    var decreaseBtn = document.querySelector(".btn-decrease-quantity");
+    var inputQuantity = document.querySelector(".input-increase-descrease-cart");
+    var checkAllBill = $(".check-all-bill");
+    var petItemCheckBox = $('input[name = "petIds[]"]');
+    var buyBtn = $('.choose-all-for-goods-to-buy');
+    console.log(checkAllBill)
+    console.log(petItemCheckBox);
+    increaseBtn.onclick = function(e) {
+        inputQuantity.value = Number(inputQuantity.value) + 1;
+    }
+    
+    decreaseBtn.onclick = function() {
+        if(Number(inputQuantity.value) > 0){
+            inputQuantity.value = Number(inputQuantity.value) - 1;
+        }
+    }
+
+    buyBtn.click(function(e){
+        e.preventDefault();
+        var submitatble = !$(this).hasClass("disabled");
+        if(submitatble) {
+            buyBtn.submit();
+        }
+    })
+
+    checkAllBill.change(function() {
+        var isCheckedAll = $(this).prop("checked");
+         petItemCheckBox.prop("checked",isCheckedAll);
+         checkAllBill.prop("checked",isCheckedAll);
+         renderCheckAllSubmitBtn();
+    })
+
+    petItemCheckBox.change(function() {
+        var isCheckedAll = petItemCheckBox.length === $('input[name = "petIds[]"]:checked').length;
+        console.log(isCheckedAll);
+        checkAllBill.prop("checked",isCheckedAll);
+         renderCheckAllSubmitBtn();
+    })
+
+    function renderCheckAllSubmitBtn () {
+        var checkedCount = $('input[name = "petIds[]"]:checked').length;
+        if(checkedCount > 0) {
+            buyBtn.removeClass("disabled");
+        }else{
+            buyBtn.addClass("disabled");
+        }
+    }
+});
+</script>

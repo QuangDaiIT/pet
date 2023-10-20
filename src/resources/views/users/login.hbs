@@ -1,0 +1,160 @@
+<div class="register-container login-cotainer">
+    <div class="sub-header-for-page">
+<!-- Begin nav -->
+    {{!-- <div class="navar-logo-search">
+    <form name="seach-pet-form" method="GET" action="/pet/search">
+        <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>        
+    </div>
+    <ul id="nav">
+        <li><a href="/pet/dog">Cún Cảnh</a></li>
+        <li><a href="/pet/cat">Mèo Cảnh</a></li>
+        <li><a href="">Liên Hệ</a></li>
+        {{{Authentication _login}}}
+    </ul>
+    <a href="/pet/cart/show?cart=true" class="register-login-authetication">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="number-of-items-cart">0</div>
+    </a>
+
+    251103050903
+    </div> --}}
+    
+    <div class="title-name-of-dog">
+        <div class="title-of-name-page">
+            {{!-- <i class="fa-solid fa-bag-shopping "></i> --}}
+            <i class="fa-solid fa-person-walking-arrow-right bag-in-the-cart-shopping"></i>
+            {{!-- <i class="fa-solid fa-users-between-lines bag-in-the-cart-shopping"></i> --}}
+            <span class="content-of-bag-goods">Đăng nhập</span>
+        </div>
+        {{!-- <div class="navar-logo-search">
+            <form name="seach-pet-form" method="GET" action="/pet/search">
+                <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>        
+        </div> --}}
+    </div>
+</div>
+    <div class="image-pet-register">
+        <img src="https://thucungtabi.com/wp-content/uploads/2021/01/shiba-inu.png" alt="">
+    </div>
+    <div class="register-container-wrap">
+        <div class="register-container-wrap-list">
+            <h3 class="register-text-header">Đăng Nhập</h3>
+            <div class="login-denied-by-wrong">
+                <div class="login-wrap-sign-wrong">
+                    <i class="sign-of-denied-account fa-regular fa-circle-xmark"></i>
+                </div>
+                <span class="text-alert-denied-login">Tên tài khoản của bạn hoặc Mật khẩu không đúng, vui lòng thử lại</span>
+            </div>
+            <form class="move-to-home-after-login" method="POST">
+                <div>
+                    <input class="register-input-enter" type="text" name="name" id="email" placeholder="Email/Số điện thoại/Tên đăng nhập">
+                </div>
+                <span class="please-fill-in-this-field please-fill-in-this-field-1">Vui lòng điền vào mục này!</span>
+                <input class="register-input-enter register-input-enter1" type="password" name="password" id="password" placeholder="Mật khẩu">
+                <div class="please-fill-in-this-field please-fill-in-this-field-2">Vui lòng điền vào mục này!</div>
+                {{!-- <button class="register-button-enter" name="_login" type="submit" value="true" > --}}
+                <button class="register-button-enter" type="submit" >
+
+                    Đăng Nhập
+                    {{!-- <a href="?_login&type=true" class="notify-login-successfull">ĐĂNG NHẬP</a> --}}
+                </button>
+            </form>
+            <div class="register-unexpectation-occur">
+                <a class="login-more-infor-occur forgot-password-login" href="">Quên mât khẩu</a>
+                <a class="login-more-infor-occur login-by-sms" href="">Đăng nhập với SMS</a>
+            </div>
+            <div class="selection-register-user">
+                <div class="border-register-line"></div>
+                <span class="register-selection-options">Hoặc</span>
+                <div class="border-register-line"></div>
+            </div>
+            <div class="container-button-link-to-register">
+                <button class="button-link-to-register">
+                    <img class="google-image-icon-register" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD30lEQVR4AayShW4cMRCGLQgzHArKDK9xor5KnyDMSZmZmZmZRWWuKMy8e3y7U8/KvXG6PlR+6dM3Wtv/tElYulnzHXI918HnvQZ7PNfgGfdvz1XQEJzFtz14B++y+crCO+D2XoG97ssw475swhwuGWSOK26T3zX24luWbZbehTxe1uS+YOiuCzGwOB+3mA2yAvcFU8cO7Mrsf30R3Lz4nfMcL+eglZyNkm3QGXZhJ0snzrOw3nE61uc4zQs4wmKOxC3PaIszZA4/I2On6zSsY8ni4P9Kx6loX/WJMCCOk5G47dCZ+r79HLtxR8LfueN45F318TDEORYiW4TJHBcvbf8QhT/TJoRiJkQME2bCJvRpJnwaM8TbuX24Q/k3wS82VR0JwRwOB8nSjF5xJgRvhgxIEtEj3kngLibHcQzc1YdDetWhICSj8iD5UW8MUsX+PoBGdNzJ/qXqQHBv5f4AVHCEBX4yp1LMG26EIJ2I+2hpFn18J8OsuQi5lXv9MxV7/ZAul35HIY0k7cCduJtV7tN95bt0sNgdt5g1sjR/GrX/+E9+j8DyI35xV7eh6q/cpftY2Q5tDwfSoVxYj5jwf5Yf4qV0j+bknXtY2bbZZxxIh9KtlkERfjaD52QFcgdSvl17xkq3zP4u3TwDSAlZAZ2pgmeZgrtZ6aZpraRrGpR0kuVZFTpXv1eBu1lpx5RW3DEFFu1kmWzSM21AiehC04wWc/uUxorbpn4XtU6CiuLWKcvZ5HVPxN7ZQkZwNytqnnxW1DwBSGETWSabnPsSkjuV4G5W2DC+hwPJyCZdL/22ngLJYt7DihonfAW1Y2BRR5bJJhtvaeL9OFoJ7mZrGiC3sHb8b6vlcdswFATRL2ZCDagAX12H+3DOOWe7A8d2fFQZlsRMXpzu6z8kVnGdPcDgDbRJ5InP/nFB3lFOTMlck1TVuW8gD8wzcRO3FeQfFvfeQUbeQU5M2K0yOGBJXlVjcmaO1HFTsernecPZTd/c3ZQ0CeTM7M+S3L0MNWbpT/a94abql7ebXDrburidECiZa5LsspZUZO+kzNI2Z31r9JPsmlx7M2namzHZG7J1vaQkp6qBff09csYN3FKS6jt5w1mPA2stos8sCb/b6zFzIPMcduOG+kzORjpurUaBtRKRuRwSsz8LqnpWQuaoV8MAu9V3VF/MG9Zi2DQXAxrwUlhSENeZA7aWwyY/+bc1tkKu/hOXxkLwZswHVLlTUlINNW0mjFnswC71W+FtGLOd+9ps+7k2qw/MtEmSrlNZB+c6z5jBrPo3nZNjzXQm1FTrjgSp6dYDakr3oFd9U+9y1lO9tTZT6gAAAABJRU5ErkJggg==" alt="">
+                    <span class="text-link-to-register">Facebook</span>
+                </button>
+                <button class="button-link-to-register">
+                    <img class="google-image-icon-register" src="https://storage.googleapis.com/support-kms-prod/ZAl1gIwyUsvfwxoW9ns47iJFioHXODBbIkrK" alt="">
+                    <span class="text-link-to-register">Google</span>
+                </button>
+            </div>
+            {{urs}}
+            {{!-- <div class="lisence-allow-register">
+                Bằng việc đăng kí, bạn đã đồng ý với LovePets về<br>
+                <a class="severice-allow-to-link" href="">Điều khoản dịch vụ</a>
+                & 
+                <a class="severice-allow-to-link" href="">Chính sách bảo mật</a>
+            </div> --}}
+            <div class="created-an-account">
+                <span class="text-count-created" >Bạn mới biết đến LovePets?</span>
+                <a class="button-link-to-register1 " href="/account/register">Đăng ký</a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="image-pet-register image-pet-register1">
+        <img src="https://thucungtabi.com/wp-content/uploads/2021/01/shiba-inu.png" alt="">
+    </div>
+</div>
+
+<script>
+    var moveToHome = document.querySelector(".move-to-home-after-login");
+    var registerBtn = document.querySelector(".register-button-enter");
+    var logInWrong = document.querySelector(".login-denied-by-wrong");
+    var tempEmail = document.getElementById("email");
+    var tempPassword = document.getElementById("password");
+    var registerInput1 = document.querySelector(".please-fill-in-this-field-1");
+    var registerInput2 = document.querySelector(".please-fill-in-this-field-2");
+    var registerInputEnter1 = document.querySelector(".register-input-enter1");
+    var notifyLoginSuccessfull = document.querySelector(".notify-login-successfull");
+    tempEmail.onkeyup = function() {
+        console.log(tempEmail.value);
+        if(tempEmail.value === '') {
+            tempEmail.style.border =  "1px solid #ffd4d8";
+            tempEmail.backgroundColor = "#fff9fa";
+            registerInput1.style.display = "block";
+            registerInputEnter1.style.marginTop = "10px";
+
+        }else {
+            tempEmail.style.border =  "1px solid #ccc";
+            tempEmail.backgroundColor = "#fff";
+            registerInput1.style.display = "none";
+            registerInputEnter1.style.marginTop = "33px";
+            registerInputEnter1.style.marginBottom = "33px";
+        }
+    }
+
+    tempPassword.onkeyup = function() {
+        if(tempPassword.value === '') {
+            tempPassword.style.border =  "1px solid #ffd4d8";
+            tempPassword.backgroundColor = "#fff9fa";
+            registerInput2.style.display = "block";
+            registerInputEnter1.style.marginBottom = "0px";
+        }else{
+            tempPassword.style.border =  "1px solid #ccc";
+            tempPassword.backgroundColor = "#fff";
+            registerInput2.style.display = "none";
+            registerInputEnter1.style.marginBottom = "33px";
+        }
+    }
+
+    registerBtn.onclick = function(e){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+       if(email === "admin2204@gmail.com" && password === "251103050903"){
+            //notifyLoginSuccessfull.style.href = "?_login";
+            moveToHome.action = "/account/admin/page";
+            moveToHome.submit();
+       }else{
+            //e.preventDefault();
+            //logInWrong.style.display = "flex";
+            moveToHome.action = "/account/check/user";
+            moveToHome.submit();
+        }
+    }
+</script>

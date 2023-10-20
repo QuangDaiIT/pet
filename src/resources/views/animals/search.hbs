@@ -1,0 +1,43 @@
+<div id="header">
+<!-- Begin nav -->
+  <div class="navar-logo-search">
+  <form name="seach-pet-form" method="GET" action="/pet/search">
+    <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+       <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+  </form>        
+  </div>
+  <ul id="nav">
+    <li><a href="/pet/dog">Cún Cảnh</a></li>
+    <li><a href="/pet/cat">Mèo Cảnh</a></li>
+    <li><a href="">Liên Hệ</a></li>
+    {{{Authentication _login}}}
+  </ul>
+  <a href="/pet/cart/show?cart=true" class="register-login-authetication">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <div class="number-of-items-cart">{{countCart}}</div>
+  </a>
+</div>
+</div>
+
+<div class="clearfix"></div>
+<div class="container-type-of-dog">
+    <div class="wrap-type-of-dog">
+        <img class="imge-presentation-content" src="https://azpet.com.vn/wp-content/uploads/2021/07/Banner-Mobile-Cho-Canh.jpg" alt="">
+        <div class="specialization-product-content123">
+            <h2 class="specialization-text-content12">Kết quả cho từ khóa: {{nameSearch}}</h2>
+        </div>
+        <div class="container-tag-animals1">
+            {{#each courses}}
+                <div class="wrapper-tag-animals2">
+                    <a class="link-to-more-infor-animals" href="/pet/detail/{{this.slug}}">
+                        <div class="limited-image-animals-overflow">
+                            <img class="card-img-top1" src="{{this.image}}" alt="Card image cap">
+                        </div>
+                        <h5 class="card-title-animals1">{{this.name}}</h5>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

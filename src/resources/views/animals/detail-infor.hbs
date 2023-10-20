@@ -1,0 +1,85 @@
+<div id="header">
+<!-- Begin nav -->
+  <div class="navar-logo-search">
+  <form name="seach-pet-form" method="GET" action="/pet/search">
+    <input name="types" class="search-input-kewords" type="text" placeholder="Nhập từ khóa..."><button type="submit" class="btn-search-kewords">
+       <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+  </form>        
+  </div>
+  <ul id="nav">
+    <li><a href="/pet/dog">Cún Cảnh</a></li>
+    <li><a href="/pet/cat">Mèo Cảnh</a></li>
+    <li><a href="">Liên Hệ</a></li>
+    {{{Authentication _login}}}
+  </ul>
+  <a href="/pet/cart/show?cart=true" class="register-login-authetication">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <div class="number-of-items-cart">{{countCart}}</div>
+  </a>
+</div>
+</div>
+
+<div class="detail-pet-container">
+    <div class="detail-pet-wrap">
+        <div class="detail-img-pet">
+            <img class="image-presentaion-pet" src="{{courses.image}}" alt="">
+            <h2 class="name-of-this-pet-infor">{{courses.name}}</h2>
+        </div>
+        <div class="more-infor-this-pet">
+            <div class="enclose-right-by-this-pet">
+                <h5 class="text-of-rights">Đặc Quyền Đi Kèm</h5>
+                <ul class="list-of-rights-enclose">
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Trả góp LS 0% trong 12 tháng</span>
+                    </li>
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Bảo hành lên tới 365 ngày</span>
+                    </li>
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Bảo hiểm sức khỏe lên tới 1,000,000đ</span>
+                    </li>
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Miễn phí vận chuyển toàn quốc</span>
+                    </li>
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Giảm 500,000đ khi mua bé thứ 2.</span>
+                    </li>
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Giảm trọn đời 5% khi mua phụ kiện.</span>
+                    </li>
+                    <li class="item-of-rights-enclose">
+                        <i class="fa-solid fa-hand-point-right icon-point-to-infor-of-pet"></i>
+                        <span class="content-infor-icon-poiter">Giảm trọn đời 20% Spa cắt tỉa – Áp dụng với KH khu vực TP.HCM.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="price-of-this-pet">
+                <span class="content-price-of-this-pet content-price-of-this-pet1">Giá ưu đãi : </span >
+                <span class="content-price-of-this-pet content-price-of-this-pet2">{{courses.price}} vnđ</span >
+            </div>
+            <div class="selection-for-this-pet">
+                <form class="add-to-cart-form" action="/pet/{{courses._id}}/cart?_method=PUT"  method="POST">
+                    <button class="add-to-the-cart" name="cart" type="submit" value="true">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Thêm Vào Giỏ Hàng
+                </button>
+                </form>
+                <a href="/account/buy/page" class="buy-now">Mua Ngay</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var quantityOfItems = document.querySelector(".number-of-items-cart");
+    var addToCart = document.querySelector(".add-to-the-cart");
+    var index = 0;
+    
+</script>
